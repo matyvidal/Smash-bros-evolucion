@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia de Super Smash Bros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #eef2f7;
+            color: #1a202c;
+            line-height: 1.65;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: 
+                linear-gradient(160deg, rgba(15, 23, 42, 0.82) 0%, rgba(30, 41, 59, 0.78) 100%),
+                url('images2/smash1.jpg') center/cover no-repeat;
+            color: white;
+            padding: 110px 24px 90px;
+            text-align: center;
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to top, #eef2f7, transparent);
+        }
+        header h1 {
+            font-size: clamp(30px, 5.5vw, 48px);
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            margin-bottom: 14px;
+            text-shadow: 0 3px 16px rgba(0,0,0,0.45);
+            position: relative;
+            z-index: 1;
+        }
+        header p {
+            font-size: 17px;
+            opacity: 0.92;
+            max-width: 520px;
+            margin: 0 auto;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+            position: relative;
+            z-index: 1;
+        }
+        .badge {
+            display: inline-block;
+            margin-top: 22px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 7px 18px;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 20px 20px 100px;
+        }
+
+        /* ===== INTRO ===== */
+        .intro {
+            background: white;
+            border-radius: 16px;
+            padding: 36px 40px;
+            margin-bottom: 52px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            position: relative;
+            top: -30px;
+        }
+        .intro p {
+            font-size: 16.5px;
+            color: #4a5568;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .intro strong {
+            color: #1a202c;
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 36px;
+            height: 380px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+            cursor: pointer;
+            transition: height 0.45s ease, box-shadow 0.3s ease;
+        }
+        section:hover {
+            height: 520px;
+            box-shadow: 0 14px 40px rgba(0,0,0,0.12);
+        }
+        .section-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            background: #edf2f7;
+        }
+
+        /* Gradient overlay for text readability */
+        .section-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(15, 23, 42, 0.90) 0%,
+                rgba(15, 23, 42, 0.55) 32%,
+                rgba(15, 23, 42, 0.12) 55%,
+                transparent 100%
+            );
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 28px 32px 32px;
+            transition: background 0.35s ease;
+        }
+        section:hover .section-overlay {
+            background: linear-gradient(
+                to top,
+                rgba(15, 23, 42, 0.92) 0%,
+                rgba(15, 23, 42, 0.60) 38%,
+                rgba(15, 23, 42, 0.18) 65%,
+                transparent 100%
+            );
+        }
+
+        .section-number {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, #3182ce, #2b6cb0);
+            color: white;
+            font-size: 16px;
+            font-weight: 800;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(49, 130, 206, 0.4);
+            margin-bottom: 12px;
+        }
+        .section-overlay h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        .section-overlay .year {
+            display: inline-block;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #90cdf4;
+            background: rgba(49, 130, 206, 0.25);
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(144, 205, 244, 0.3);
+        }
+        .section-overlay p {
+            font-size: 14.5px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 10px;
+            line-height: 1.65;
+            max-width: 640px;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.25);
+        }
+        .section-overlay p:last-child {
+            margin-bottom: 0;
+        }
+        .section-overlay strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 40px 20px 50px;
+            color: #718096;
+            font-size: 13.5px;
+        }
+        footer span {
+            display: block;
+            margin-top: 6px;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 700px) {
+            header {
+                padding: 80px 18px 70px;
+                min-height: 320px;
+            }
+            .intro {
+                padding: 26px 22px;
+                top: -20px;
+            }
+            section {
+                height: 340px;
+            }
+            section:hover {
+                height: 460px;
+            }
+            .section-overlay {
+                padding: 22px 20px 24px;
+            }
+            .section-overlay h2 {
+                font-size: 19px;
+            }
+            .section-overlay p {
+                font-size: 13.5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Historia de Super Smash Bros</h1>
+        <p>Del prototipo secreto al crossover más grande de los videojuegos</p>
+        <div class="badge">1999 — Presente</div>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <p>
+                Super Smash Bros nació como un proyecto personal de <strong>Masahiro Sakurai</strong> y <strong>Satoru Iwata</strong>. 
+                Lo que empezó como un simple prototipo de pelea entre amigos se convirtió en una de las sagas más queridas de Nintendo.
+            </p>
+        </div>
+
+        <!-- SECCIÓN 1 -->
+        <section>
+            <img class="section-img" src="images2/smash2.jpg" alt="El Origen - Nintendo 64">
+            <div class="section-overlay">
+                <div class="section-number">1</div>
+                <h2>El Origen</h2>
+                <span class="year">1999 · Nintendo 64</span>
+                <p>
+                    Todo empezó en 1996. Masahiro Sakurai y Satoru Iwata crearon el prototipo <strong>“Dragon King: The Fighting Game”</strong>. 
+                    Nintendo dudó al principio, pero el juego era demasiado divertido. Así nació <strong>Super Smash Bros</strong> en 1999.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2 -->
+        <section>
+            <img class="section-img" src="images2/smash3.jpg" alt="Melee - GameCube">
+            <div class="section-overlay">
+                <div class="section-number">2</div>
+                <h2>Melee: La revolución</h2>
+                <span class="year">2001 · GameCube</span>
+                <p>
+                    <strong>Super Smash Bros. Melee</strong> fue un salto enorme: más personajes, física más rápida y un modo competitivo 
+                    que nadie esperaba. Aún hoy se juega en torneos profesionales de todo el mundo.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3 -->
+        <section>
+            <img class="section-img" src="images2/smash4.jpg" alt="Brawl - Wii">
+            <div class="section-overlay">
+                <div class="section-number">3</div>
+                <h2>Brawl: La gran expansión</h2>
+                <span class="year">2008 · Wii</span>
+                <p>
+                    Llegaron personajes de otras compañías (Snake y Sonic), los <strong>Final Smashes</strong>, Assist Trophies 
+                    y el modo historia “El Emisario Subespacial”. Fue el Smash más accesible hasta ese momento.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4 -->
+        <section>
+            <img class="section-img" src="images2/smash5.jpg" alt="Smash 4 - Wii U">
+            <div class="section-overlay">
+                <div class="section-number">4</div>
+                <h2>Smash 4: La era moderna</h2>
+                <span class="year">2014 · Wii U y 3DS</span>
+                <p>
+                    El primer Smash en dos plataformas. Nuevos personajes como Mega Man, Pac-Man, Cloud y Bayonetta, 
+                    y un sistema de personalización de luchadores. Consolidó la fórmula moderna de la saga.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5 -->
+        <section>
+            <img class="section-img" src="images2/smash6.jpg" alt="Ultimate - Nintendo Switch">
+            <div class="section-overlay">
+                <div class="section-number">5</div>
+                <h2>Ultimate: Todos están aquí</h2>
+                <span class="year">2018 · Nintendo Switch</span>
+                <p>
+                    <strong>“Everyone is here!”</strong> — más de 80 luchadores, 100+ escenarios y cientos de canciones. 
+                    El Smash más grande de la historia y el más jugado en la actualidad.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        Página creada con fines educativos
+        <span>Super Smash Bros es propiedad de Nintendo</span>
+    </footer>
+</body>
+</html>
